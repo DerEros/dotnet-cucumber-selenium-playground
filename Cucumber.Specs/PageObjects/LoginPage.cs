@@ -36,7 +36,7 @@ namespace Login.PageObject
 
         public void Login(string email, string username, string password)
         {
-            Driver.Url = "***";
+            Driver.Url = Settings.LoginUrl;
 
             EnterAndSubmitEmail(email);
             SubmitUsernameAndPassword(username, password);

@@ -20,7 +20,7 @@ namespace Login.Steps
         [When(@"logging in as '(.*)'")]
         public void LoggingInAsUser(string username) 
         {
-            loginPage.Login("***", "***", "***");
+            loginPage.Login(Settings.UserEmail, Settings.UserLogin, Settings.UserPassword);
         }
 
         [Then(@"the logged in user is '(.*)'")]
