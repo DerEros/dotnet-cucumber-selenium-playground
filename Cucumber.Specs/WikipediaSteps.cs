@@ -1,30 +1,35 @@
 using TechTalk.SpecFlow;
 using Xunit;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using Utils;
 
 namespace Wikipedia.Steps
 {
     [Binding]
-    public class WikipediaSteps {
-        IWebDriver driver;
+    public class WikipediaSteps 
+    {
+        BrowserWindow browser;
+
+        public WikipediaSteps(BrowserWindow browserWindow) 
+        {
+            this.browser = browserWindow;
+        }
 
         [Given(@"an open browsers window")]
         public void OpenBrowser() 
         {
-            driver = new ChromeDriver();
+            Assert.NotNull(BrowserWindow.Driver);
         }
 
         [When(@"navigating to '(.*)'")]
         public void OpenUrl(string url) 
         {
-            driver.Url = "https://wikipedia.org";
+            BrowserWindow.Driver.Url = "https://wikipedia.org";
         }
 
         [Then(@"the title is '(.*)'")]
         public void ValidatePageTitle(string expectedTitle) 
         {
-            Assert.True(expectedTitle == driver.Title);
+            Assert.True(expectedTitle == BrowserWindow.Driver.Title);
         }
     }
 }
