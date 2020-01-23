@@ -1,6 +1,7 @@
-using System;
 using TechTalk.SpecFlow;
 using Xunit;
+
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 
 namespace Cucumber.Specs {
     [Binding]
