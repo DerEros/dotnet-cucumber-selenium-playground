@@ -37,19 +37,29 @@ namespace Login.PageObject
         public void Login(string email, string username, string password)
         {
             Driver.Url = "***";
+
+            EnterAndSubmitEmail(email);
+            SubmitUsernameAndPassword(username, password);
+
+            SubmitEmail.Click();
+        }
+
+        public void EnterAndSubmitEmail(string email)
+        {
             Email.Clear();
             Email.SendKeys(email);
-            SubmitEmail.Click();
 
+            SubmitEmail.Click();
+        }
+
+        public void SubmitUsernameAndPassword(string username, string password)
+        {
             Username.Clear();
             Username.SendKeys(username); 
             Password.Clear(); 
             Password.SendKeys(password);
 
             SubmitLogin.Click();
-
-            SubmitEmail.Click();
         }
-
     }
 }
