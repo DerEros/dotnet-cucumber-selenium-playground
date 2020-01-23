@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Transpiled feature files
 *.feature.cs
+
+# Sensitive information
+Utils/Settings.cs
