@@ -1,7 +1,8 @@
 using TechTalk.SpecFlow;
 using Utils;
 using Xunit;
-using Login.PageObject;
+using PageObject.Login;
+using PageObject.Calendar;
 
 namespace Login.Steps 
 {
@@ -11,7 +12,9 @@ namespace Login.Steps
         BrowserWindow browser;
         LoginPage loginPage;
 
-        public LoginSteps(BrowserWindow browserWindow, LoginPage loginPage)
+        public LoginSteps(BrowserWindow browserWindow, 
+                LoginPage loginPage,
+                CalendarPage calendarPage)
         {
             this.browser = browserWindow;
             this.loginPage = loginPage;

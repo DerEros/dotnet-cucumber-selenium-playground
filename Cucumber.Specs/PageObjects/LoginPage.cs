@@ -4,7 +4,7 @@ using SeleniumExtras.PageObjects;
 
 using Utils;
 
-namespace Login.PageObject
+namespace PageObject.Login
 {
     public class LoginPage 
     {
